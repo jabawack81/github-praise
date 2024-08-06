@@ -52,7 +52,7 @@
 			praise = data.praise;
 		} catch (error) {
 			console.error('Error:', error);
-			praise = 'Oops! Looks like our praiseing machine is on a coffee break. Try again later!';
+			praise = 'Oops! Looks like our praising machine is on a coffee break. Try again later!';
 		} finally {
 			loading = false;
 		}
@@ -68,7 +68,7 @@
 </svelte:head>
 
 <div class="container mx-auto p-4 max-w-md">
-	<h1 class="text-3xl font-bold mb-4 text-center text-purple-600">GitHub praiseer</h1>
+	<h1 class="text-3xl font-bold mb-4 text-center text-purple-600">GitHub praiser</h1>
 
 	<div class="mb-4">
 		<input
@@ -98,7 +98,7 @@
 		class="w-full bg-purple-500 text-white font-bold py-2 px-4 rounded-md hover:bg-purple-600 transition-colors disabled:bg-purple-300 disabled:cursor-not-allowed"
 		disabled={loading || !username}
 	>
-		{loading ? 'praiseing...' : 'praise This GitHub!'}
+		{loading ? 'praising...' : 'Praise This GitHub!'}
 	</button>
 
 	{#if praise && mounted}
