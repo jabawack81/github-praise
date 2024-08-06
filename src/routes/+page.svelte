@@ -111,15 +111,18 @@
 	{/if}
 
 	<div class="mt-8 text-center text-sm text-gray-500">
-		<p>&copy; 2024 github-praise.pages.dev</p>
+		<p>&copy; 2024 githubpraise.pages.dev</p>
 		<p>
-			Poke <a class="text-blue-500" target="_blank" href="https://x.com/rubi1945">Admin</a> if something
+			Poke <a class="text-blue-500" target="_blank" href="https://x.com/jabawack81">Admin</a> if something
 			goes wrong
 		</p>
 		<p>
-			<a class="text-blue-500" target="_blank" href="https://github.com/codenoid/github-praise"
+			<a class="text-blue-500" target="_blank" href="https://github.com/jabawack81/github-praise/"
 				>Source code on GitHub</a
 			>
+		</p>
+    <p>
+      This is a tamed fork of the original project <a class="text-blue-500" target="_blank" href="https://github.com/codenoid/github-roast">GitHub Roast</a> by <a class="text-blue-500" target="_blank" href="https://lokal.so/">Lokal.so</a>
 		</p>
 	</div>
 </div>
