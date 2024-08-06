@@ -4,7 +4,7 @@
 	import SvelteMarkdown from 'svelte-markdown';
 
 	let username = '';
-	let roast = '';
+	let praise = '';
 	let loading = false;
 	let mounted = false;
 	let selectedLanguage = 'english';
@@ -31,7 +31,7 @@
 		mounted = true;
 	});
 
-	async function handleRoast() {
+	async function handlePraise() {
 		if (!username) return;
 
 		loading = true;
@@ -45,30 +45,30 @@
 			});
 
 			if (!response.ok) {
-				throw new Error('Failed to fetch roast');
+				throw new Error('Failed to fetch praise');
 			}
 
 			const data = await response.json();
-			roast = data.roast;
+			praise = data.praise;
 		} catch (error) {
 			console.error('Error:', error);
-			roast = 'Oops! Looks like our roasting machine is on a coffee break. Try again later!';
+			praise = 'Oops! Looks like our praiseing machine is on a coffee break. Try again later!';
 		} finally {
 			loading = false;
 		}
 	}
 
 	function handleKeyDown(event) {
-		event.key === 'Enter' && handleRoast();
+		event.key === 'Enter' && handlePraise();
 	}
 </script>
 
 <svelte:head>
-	<title>GitHub Profile Roast 🔥🔥🔥</title>
+	<title>GitHub Profile praise 🔥🔥🔥</title>
 </svelte:head>
 
 <div class="container mx-auto p-4 max-w-md">
-	<h1 class="text-3xl font-bold mb-4 text-center text-purple-600">GitHub Roaster</h1>
+	<h1 class="text-3xl font-bold mb-4 text-center text-purple-600">GitHub praiseer</h1>
 
 	<div class="mb-4">
 		<input
@@ -94,30 +94,30 @@
 	</div>
 
 	<button
-		on:click={handleRoast}
+		on:click={handlePraise}
 		class="w-full bg-purple-500 text-white font-bold py-2 px-4 rounded-md hover:bg-purple-600 transition-colors disabled:bg-purple-300 disabled:cursor-not-allowed"
 		disabled={loading || !username}
 	>
-		{loading ? 'Roasting...' : 'Roast This GitHub!'}
+		{loading ? 'praiseing...' : 'praise This GitHub!'}
 	</button>
 
-	{#if roast && mounted}
+	{#if praise && mounted}
 		<div class="mt-6 relative bg-gray-100 p-4 rounded-lg" transition:fade={{ duration: 300 }}>
 			<div
 				class="absolute top-0 left-4 -mt-2 w-0 h-0 border-8 border-transparent border-b-gray-100"
 			></div>
-			<p class="text-gray-800"><SvelteMarkdown source={roast} /></p>
+			<p class="text-gray-800"><SvelteMarkdown source={praise} /></p>
 		</div>
 	{/if}
 
 	<div class="mt-8 text-center text-sm text-gray-500">
-		<p>&copy; 2024 github-roast.pages.dev</p>
+		<p>&copy; 2024 github-praise.pages.dev</p>
 		<p>
 			Poke <a class="text-blue-500" target="_blank" href="https://x.com/rubi1945">Admin</a> if something
 			goes wrong
 		</p>
 		<p>
-			<a class="text-blue-500" target="_blank" href="https://github.com/codenoid/github-roast"
+			<a class="text-blue-500" target="_blank" href="https://github.com/codenoid/github-praise"
 				>Source code on GitHub</a
 			>
 		</p>

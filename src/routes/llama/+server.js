@@ -9,7 +9,7 @@ const client = new OpenAI({
 let headers = {
 	Accept: 'application/json',
 	'Content-Type': 'application/json',
-	'User-Agent': 'github-roast.pages.dev'
+	'User-Agent': 'github-praise.pages.dev'
 };
 
 const validLanguages = [
@@ -27,7 +27,6 @@ const validLanguages = [
 ];
 
 export async function POST({ request, platform }) {
-	let answerdebug = '';
 	const { username, language } = await request.json();
 
 	if (!validLanguages.includes(language)) {
@@ -53,7 +52,7 @@ export async function POST({ request, platform }) {
 		if (response.ok) {
 			useToken = true;
 		} else {
-			return json({ error: 'Our roast machine is in trouble' }, { status: 500 });
+			return json({ error: 'Our praise machine is in trouble' }, { status: 500 });
 		}
 	} catch (err) {
 		console.log(err);
@@ -121,48 +120,48 @@ export async function POST({ request, platform }) {
 			.slice(0, 15)
 	};
 
-	let prompt = `give a short and harsh roasting for the following github profile: ${username}. Here are the details: "${JSON.stringify(datas)}"`;
+	let prompt = `Give a short and warm praise for the following GitHub profile: ${username}. Here are the details: "${JSON.stringify(datas)}"`;
 	switch (language) {
 		case 'indonesian':
-			prompt = `gunakan bahasa indonesia yang normal seperti manusia gaul, berikan roasting singkat dengan kejam dan menyindir dalam bahasa gaul untuk profile github berikut : ${username}. Berikut detailnya: "${JSON.stringify(datas)}"`;
+			prompt = `Gunakan bahasa Indonesia yang normal dan ramah untuk memberikan pujian singkat dan menyenangkan untuk profil GitHub berikut: ${username}. Berikut detailnya: "${JSON.stringify(datas)}"`;
 			break;
 		case 'indian':
-			prompt = `इस गिटहब प्रोफाइल के लिए एक क्रूर और व्यंग्यात्मक रोस्टिंग गली भाषा में दें: ${username}। विवरण इस प्रकार है: "${JSON.stringify(datas)}"`;
+			prompt = `इस GitHub प्रोफाइल के लिए एक छोटा और सकारात्मक प्रशंसा करें: ${username}। विवरण इस प्रकार है: "${JSON.stringify(datas)}"`;
 			break;
 		case 'chinese':
-			prompt = `用中文俚语对以下GitHub个人资料进行短暂而残酷的讽刺：${username}。以下是详细信息: "${JSON.stringify(datas)}"`;
+			prompt = `用中文对以下GitHub个人资料进行简短而真诚的赞美：${username}。以下是详细信息: "${JSON.stringify(datas)}"`;
 			break;
 		case 'japanese':
-			prompt = `以下のGitHubプロフィールに対して残酷で皮肉な短いローストをギャル語でしてください: ${username}。詳細は次の通りです: "${JSON.stringify(datas)}"`;
+			prompt = `以下のGitHubプロフィールに対して心温まる賞賛をしてください: ${username}。詳細は次の通りです: "${JSON.stringify(datas)}"`;
 			break;
 		case 'korean':
-			prompt = `다음 GitHub 프로필에 대해 잔인하고 비꼬는 짧은 로스팅을 속어로 해주세요: ${username}. 자세한 내용은 다음과 같습니다: "${JSON.stringify(datas)}"`;
+			prompt = `다음 GitHub 프로필에 대해 따뜻하고 긍정적인 칭찬을 해주세요: ${username}. 자세한 내용은 다음과 같습니다: "${JSON.stringify(datas)}"`;
 			break;
 		case 'france':
-			prompt = `fais une courte et cruelle critique sarcastique en argot pour le profil GitHub suivant : ${username}. Voici les détails : "${JSON.stringify(datas)}"`;
+			prompt = `Faites une courte et chaleureuse éloge pour le profil GitHub suivant : ${username}. Voici les détails : "${JSON.stringify(datas)}"`;
 			break;
 		case 'german':
-			prompt = `machen sie eine grausame, kurze, harte und sarkastische Röstung auf Deutsch und verwenden Sie Wortspiele und Slang, um Humor in das folgende Github-Profil zu bringen : ${username}. Hier sind die Details : "${JSON.stringify(datas)}"`;
+			prompt = `Machen Sie ein kurzes und herzliches Lob für das folgende GitHub-Profil: ${username}. Hier sind die Details : "${JSON.stringify(datas)}"`;
 			break;
 		case 'arabic':
-			prompt = `.${JSON.stringify(datas)}: اليك هذه التفصيل .${username} :(GitHub) قدم سخرية قصيرة و قاصية على الملف الشخصي في`;
+			prompt = `قدم مدحًا قصيرًا ودافئًا للملف الشخصي في GitHub: ${username}. اليك هذه التفصيل: "${JSON.stringify(datas)}"`;
 		case 'italian':
-			prompt = `Criticami in modo sarcastico il seguente profilo GitHub: ${username}. Ecco alcuni dettagli: "${JSON.stringify(datas)}"`;
+	  	prompt = `Fai un breve e caloroso elogio per il seguente profilo GitHub: ${username}. Ecco alcuni dettagli: "${JSON.stringify(datas)}"`;
 			break;
 		case 'polish':
-			prompt = `krótko i ostro skrytykuj poniższy profil GitHub: ${username}. Oto szczegóły: "${JSON.stringify(datas)}"`;
+			prompt = `Krótko i pozytywnie pochwal poniższy profil GitHub: ${username}. Oto szczegóły: "${JSON.stringify(datas)}"`;
 			break;
 		case 'vietnamese':
-			prompt = `Hãy đưa ra một lời châm chọc ngắn gọn và tàn nhẫn bằng tiếng lóng cho hồ sơ GitHub sau: ${username}. Đây là chi tiết: "${JSON.stringify(datas)}"`;
+			prompt = `Hãy đưa ra một lời khen ngợi ngắn gọn và tích cực cho hồ sơ GitHub sau: ${username}. Đây là chi tiết: "${JSON.stringify(datas)}"`;
 			break;
 		case 'finnish':
-			prompt = `Kirjoita lyhyt, julma ja sarkastinen arvostelu slangilla seuraavalle Github-profiilille: ${username}. Tässä on profiilin yksityiskohdat: "${JSON.stringify(datas)}"`;
+			prompt = `Kirjoita lyhyt, lämmin ja positiivinen arvostelu seuraavalle Github-profiilille: ${username}. Tässä on profiilin yksityiskohdat: "${JSON.stringify(datas)}"`;
 			break;
 		case 'portuguese':
-			prompt = `faça uma crítica curta e dura para o seguinte perfil do github: ${username}. Aqui estão os detalhes: "${JSON.stringify(datas)}"`;
+			prompt = `Faça um elogio curto e caloroso para o seguinte perfil do GitHub: ${username}. Aqui estão os detalhes: "${JSON.stringify(datas)}"`;
 			break;
 		case 'traditionalChinese':
-			prompt = `請用正體中文及道地台灣俗語，對這個 GitHub 帳號殘酷地吐槽一番：${username}。以下是這個帳號的詳細資訊: "${JSON.stringify(datas)}"`;
+			prompt = `請用正體中文對這個 GitHub 帳號進行簡短而真誠的讚美：${username}。以下是這個帳號的詳細資訊: "${JSON.stringify(datas)}"`;
 			break;
 	}
 
@@ -175,30 +174,30 @@ export async function POST({ request, platform }) {
 				{
 					role: 'system',
 					content:
-						'You roast people github account based on their bio, name, readme, and repos as harsh and spicy as possible, and keep it short.'
+						'You praise people github account based on their bio, name, readme, and repos as harsh and spicy as possible, and keep it short.'
 				},
 				{ role: 'user', content: prompt }
 			]
 		});
 
-		const roast = completion.choices[0].message.content;
+		const praise = completion.choices[0].message.content;
 		try {
 			await platform.env.DB.prepare(
-				'INSERT INTO roasts (gh_username, response, created_at, country, ip_address) VALUES (?, ?, ?, ?, ?)'
+				'INSERT INTO praises (gh_username, response, created_at, country, ip_address) VALUES (?, ?, ?, ?, ?)'
 			)
 				.bind(
 					username,
-					roast,
+					praise,
 					Math.floor(new Date().getTime() / 1000),
 					request?.cf?.country || '',
 					sha256(request.headers.get('cf-connecting-ip')) || ''
 				)
 				.run();
 		} catch {}
-		return json({ roast });
+		return json({ praise });
 	} catch (error) {
 		console.error('Error:', error);
-		return json({ error: 'Failed to generate roast' }, { status: 500 });
+		return json({ error: 'Failed to generate praise' }, { status: 500 });
 	}
 }
 

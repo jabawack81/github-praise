@@ -1,5 +1,5 @@
 PRAGMA defer_foreign_keys=TRUE;
-CREATE TABLE roasts (
+CREATE TABLE praises (
   id integer PRIMARY KEY AUTOINCREMENT,
   gh_username text NOT NULL,
   response text NOT NULL,
@@ -7,4 +7,4 @@ CREATE TABLE roasts (
   country text NOT NULL
 );
 DELETE FROM sqlite_sequence;
-CREATE INDEX gh_username_idx ON roasts (gh_username);
+CREATE INDEX gh_username_idx ON praises (gh_username);
